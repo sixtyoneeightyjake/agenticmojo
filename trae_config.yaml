@@ -1,7 +1,8 @@
 agents:
     trae_agent:
-        enable_lakeview: false
-        model: test_model
+        enable_lakeview: true
+        lakeview_model: gpt-5-mini
+        model: gpt-5
         max_steps: 50
         tools:
             - bash
@@ -10,17 +11,24 @@ agents:
             - task_done
 
 model_providers:
-    anthropic:
-        api_key: sk-ant-test-key
-        provider: anthropic
+    openai:
+        api_key: your-openai-api-key
+        provider: openai
 
 models:
-    test_model:
-        model_provider: anthropic
-        model: test-model
-        max_tokens: 1000
-        temperature: 0.5
+    gpt-5:
+        model_provider: openai
+        model: gpt-5
+        max_tokens: 16000
+        temperature: 0.4
         top_p: 1
-        top_k: 0
+        max_retries: 3
+        parallel_tool_calls: true
+    gpt-5-mini:
+        model_provider: openai
+        model: gpt-5-mini
+        max_tokens: 2000
+        temperature: 0.3
+        top_p: 1
         max_retries: 3
         parallel_tool_calls: true
