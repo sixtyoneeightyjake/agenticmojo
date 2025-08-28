@@ -1,6 +1,8 @@
 # Agent Mojo Deployment Guide
 
-This directory contains all the necessary files and scripts to deploy Agent Mojo to a Vultr server without Docker.
+This directory contains deployment helpers. For a minimal, streamlined setup, see `deploy/SIMPLE.md` and use `deploy/simple_deploy.sh`.
+
+The rest of this README documents a more featureful (but heavier) path. If you only need something that works quickly for a handful of users, prefer the simple approach first.
 
 ## Files Overview
 
