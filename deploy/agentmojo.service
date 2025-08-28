@@ -1,0 +1,40 @@
+[Unit]
+Description=Agent Mojo API Server
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=agentmojo
+Group=agentmojo
+WorkingDirectory=/opt/agentmojo
+Environment=PATH=/opt/agentmojo/.venv/bin:/usr/local/bin:/usr/bin:/bin
+Environment=HOST=0.0.0.0
+Environment=PORT=8000
+Environment=AGENTMOJO_DATA_DIR=/var/lib/agentmojo
+Environment=PYTHONPATH=/opt/agentmojo
+ExecStart=/opt/agentmojo/.venv/bin/python -m uvicorn server.app:app --host 0.0.0.0 --port 8000 --workers 1
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+Restart=always
+RestartSec=10
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=agentmojo
+
+# Security settings
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/agentmojo /var/log/agentmojo /tmp
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+
+[Install]
+WantedBy=multi-user.target
