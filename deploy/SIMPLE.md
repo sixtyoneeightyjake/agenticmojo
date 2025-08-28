@@ -12,7 +12,7 @@ Quick Start
 1) Copy the repo to the server (recommended path `/opt/agenticmojo`):
    sudo mkdir -p /opt/agenticmojo
    sudo chown $USER:$USER /opt/agenticmojo
-   git clone https://your.git.repo/agenticmojo.git /opt/agenticmojo
+   git clone https://github.com/sixtyoneeightyjake/agenticmojo /opt/agenticmojo
 
 2) Run the one-shot deploy script:
    cd /opt/agenticmojo/deploy
