@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/routes.tsx","./src/components/arcadeheader.tsx","./src/components/logstream.tsx","./src/components/modepanel.tsx","./src/lib/api.ts","./src/lib/stream.ts","./src/lib/types.ts","./src/lib/ws.ts","./src/pages/p1run.tsx","./src/pages/p2interactive.tsx"],"version":"5.9.2"}
