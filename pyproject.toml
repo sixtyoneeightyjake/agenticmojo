@@ -17,7 +17,7 @@ dependencies = [
     "ollama>=0.5.1",
     "socksio>=1.0.0",
     "tree-sitter-language-pack>=0.1.0",
-    "tree-sitter==0.21.3",
+    "tree-sitter>=0.23.2",
     "ruff>=0.12.4",
     "mcp==1.12.2",
     "asyncclick>=8.0.0",
