@@ -48,6 +48,9 @@ trae-api = "server.app:main"
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[tool.uv.extra-build-dependencies]
+textual-tree-sitter-languages = ["Cython"]
+
 [tool.hatch.build.targets.wheel]
 packages = ["trae_agent", "server"]
 
